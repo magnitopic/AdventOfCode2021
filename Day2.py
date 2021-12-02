@@ -8,6 +8,6 @@ for i in content:
         characters[i] = 1
     else:
         characters[i] = characters[i] = characters[i]+1
-
+file.close()
 for j in characters:
 	print(f'{j} -> {characters[j]}')
