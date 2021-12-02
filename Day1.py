@@ -1,4 +1,3 @@
-# https://github.com/seldoncode/Python_CoderDojo/blob/main/day1.ipynb
 print("I need a range of numbers")
 minNum = input("The smallest number: ")
 maxNum = input("The largest number: ")
