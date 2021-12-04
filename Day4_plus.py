@@ -1,9 +1,10 @@
 numberList = []
-for i in range(1, 30, 2):
+n = int(input("How many rows?: ") or 10)        # Nº of rows
+for i in range(1, n*(n+1), 2):
     numberList.append(i)
 
 oldJ = 0
-for i in range(1, 6):
+for i in range(1, n+1):
     array = []
     text = ""
     for j in range(oldJ, oldJ+i):
