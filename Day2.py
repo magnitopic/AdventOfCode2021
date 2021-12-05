@@ -1,13 +1,13 @@
 file = open("Frankenstein.txt", "r", encoding="utf-8")
 content = file.read()
 characters = {}
-for i in content:
+for v in content:
     try:
-        characters[i]
+        characters[v]
     except:
-        characters[i] = 1
+        characters[v] = 1
     else:
-        characters[i] = characters[i] = characters[i]+1
+        characters[v] += 1
 file.close()
-for j in characters:
-    print(f'{j} -> {characters[j]}')
+for v in characters:
+    print(f'{v} -> {characters[v]}')
