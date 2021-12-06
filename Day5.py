@@ -3,4 +3,4 @@ def lines(text,num):
 		print(text[i-num:i])
 		lastI=i
 	print(text[lastI:len(text)])
-lines("ABCDEFGHIJKLIMNOQRSTUVWXYZ",2)
+lines("ABCDEFGHIJKLIMNOQRSTUVWXYZ",4)
