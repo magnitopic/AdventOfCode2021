@@ -1,7 +1,6 @@
 word = (input("What is the word: ") or "BANANA").upper()
 vowels = ["A", "E", "I", "O", "U"]
-StuartScore = 0
-KevinScore = 0
+StuartScore,KevinScore = 0,0
 # Stuart's points
 for i in range(len(word)):
     if word[i] not in vowels:
