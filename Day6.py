@@ -10,7 +10,7 @@ def steps(n):
     return matrix
 
 
-n = 5
+n = 3
 arrays = steps(n)
 for i in range(n):
     print(*arrays[i])
