@@ -1,18 +1,19 @@
 import random
 import numpy
-# n=random.randint(1,5)
 
 
 def areThereCeros(array):
+    # We loop trought all the rows
     for e in range(n):
+        # Create a list of all the 0 in the row
         simple = [1 for i in range(n) if array[e][i] == 0]
+        # If it's len is the same as the row the hole row made up on 0 and we return 1 to continue the loop
         if len(simple) == len(array[e]):
             return 1
     return 0
 
 
 n = int(input("Give me the size of the cube: ") or 1)
-
 flag1, flag2 = True, True
 while flag1 or flag2:
     # Creates a square with same len and height
@@ -27,7 +28,9 @@ while flag1 or flag2:
             if random.random() > .5:
                 row[j] *= -1
         array.append(row)
+    # We cheek the first flag to see if a row is all ceros
     flag1 = areThereCeros(array)
+    # We turn the matrix to check the columns with the same method
     for i in range(n):
         arrayGirado.append([array[k][i] for i in range(n)for k in range(n)][i*n:(i+1)*n])
     flag2 = areThereCeros(arrayGirado)
