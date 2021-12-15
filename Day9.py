@@ -13,11 +13,10 @@ def areThereCeros(array):
     return 0
 
 
-n = int(input("Give me the size of the cube: ") or 1)
+n = int(input("Give me the size of the cube: ") or 5)
 flag1, flag2 = True, True
 while flag1 or flag2:
     # Creates a square with same len and height
-    arrayGirado = []
     array = []
     for i in range(n):
         row = []
@@ -31,7 +30,6 @@ while flag1 or flag2:
     # We cheek the first flag to see if a row is all ceros
     flag1 = areThereCeros(array)
     # We turn the matrix to check the columns with the same method
-    for i in range(n):
-        arrayGirado.append([array[k][i] for i in range(n)for k in range(n)][i*n:(i+1)*n])
+    arrayGirado=[[array[k][i] for i in range(n)for k in range(n)][i*n:(i+1)*n]for i in range(n)]
     flag2 = areThereCeros(arrayGirado)
 print(array)
