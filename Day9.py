@@ -29,7 +29,7 @@ while flag1 or flag2:
         array.append(row)
     # We cheek the first flag to see if a row is all ceros
     flag1 = areThereCeros(array)
-    # We turn the matrix to check the columns with the same method
+    # We rotate the matrix to check the columns with the same method
     arrayGirado=[[array[k][i] for i in range(n)for k in range(n)][i*n:(i+1)*n]for i in range(n)]
     flag2 = areThereCeros(arrayGirado)
 print(array)
