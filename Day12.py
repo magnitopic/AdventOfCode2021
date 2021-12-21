@@ -1,18 +1,15 @@
-import numpy
+import numpy as np
 leters = ["A", "G", "C", "T"]
 
 
 def newWord():
     # Create word
-    word = ""
-    for i in range(100):
-        # Probability indicated by the exercise
-        word += leters[numpy.random.choice(numpy.arange(0, 4), p=[.293, .207, .2, .3])]
+    word = [''.join(leters[np.random.choice(np.arange(0, 4), p=[.293, .207, .2, .3])]for i in range(3))for i in range(34)]
     print(word)
 
     # Use of ''.join() makes arrays strings of text
-    for i in range(0, len(word), 3):
-        sequence = word[i:i+3]
+    for i in range(len(word)):
+        sequence = word[i]
         if word.count(sequence) > 1 and len(sequence) == 3:
             print(f"{sequence} {word.count(sequence)}")
 
