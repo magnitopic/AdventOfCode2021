@@ -7,7 +7,7 @@ for i in range(20):
     rnd = random.random()
     if rnd < .45:
         list.append(random.randint(0, 100))
-    elif .45 < rnd and rnd < .80:
+    elif rnd < .80:
         list.append(charecters[random.randint(0, len(charecters)-1)])
     else:
         list.append(bool(int(rnd*10) % 2))
