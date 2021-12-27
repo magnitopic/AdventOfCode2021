@@ -1,5 +1,4 @@
 import json
-# JSON changes are not saved, have to wright to the file
 
 
 def studentExist(studentName):
