@@ -107,7 +107,6 @@ f = open("class.json", "r")
 text = f.read()
 f.close()
 file = json.loads(text)
-choice = ""
 printMenu()
 giveAverages()
 while choice != 6:
