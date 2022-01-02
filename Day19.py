@@ -1,4 +1,24 @@
-import Day9 as matrixGenerator
-# [[0, 0, -3, 0, 2], [0, -7, 0, 5, 3], [0, 0, -1, 4, -6], [2, -2, -1, 3, 0], [5, -5, 2, 1, -3]]
-# determinate = -1820
-print(matrixGenerator.main(4))
+import random
+
+n = 3
+MainDiagonal, SecondDiagonal, array = 0, 0, []
+
+for i in range(n):
+    row = []
+    for j in range(n):
+        # Value is randomlly chosen beteen -9 and 9, with diferent probability
+        row.append(random.randint(1, 9))
+        # Value is has a 50/50 chance of beeing negative
+        if random.random() > .5:
+            row[j] *= -1
+    array.append(row)
+print(array)
+MainDiagonal += sum(array[i][i] for i in range(len(array)))
+print()
+for i in range(len(array)):
+    print(array[i][(len(array)-1)-i])
+    SecondDiagonal += array[i][(len(array)-1)-i]
+
+print(f"Main diagonal: {MainDiagonal}")
+print(f"Secondary diagonal: {SecondDiagonal}")
+print(f"Absolute value of the difference: {abs(MainDiagonal-SecondDiagonal)}")
