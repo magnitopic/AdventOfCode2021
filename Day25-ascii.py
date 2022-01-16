@@ -40,15 +40,14 @@ def machineTurn():
 
 def cheekWin():
     # Checks if the user won
-    print()
-    if any([1 for j in range(3) if sum([1 for i in range(3) if board[j][i] == "X"]) == 3]) or any([1 for j in range(3) if sum([1 for i in range(3) if board[i][j] == "X"]) == 3]) or all([1 if board[i][i]=="X" else 0 for i in range(3)]) or all([1 if board[i][3-i+1] == "X" else 0 for i in range(3)]):
+    if any([1 for j in range(3) if sum([1 for i in range(3) if board[j][i] == "X"]) == 3]) or any([1 for j in range(3) if sum([1 for i in range(3) if board[i][j] == "X"]) == 3]) or all([1 if board[i][i] == "X" else 0 for i in range(3)]) or all([1 if board[i-1][3-i] == "X" else 0 for i in range(1, 4)]):
         print("You Win!")
         return 0
     # Checks if the PC has won
-    elif any([1 for j in range(3) if sum([1 for i in range(3) if board[j][i] == "O"]) == 3]) or any([1 for j in range(3) if sum([1 for i in range(3) if board[i][j] == ""]) == 3]) or all([1 if board[i][i]=="O" else 0 for i in range(3)]):
+    elif any([1 for j in range(3) if sum([1 for i in range(3) if board[j][i] == "O"]) == 3]) or any([1 for j in range(3) if sum([1 for i in range(3) if board[i][j] == ""]) == 3]) or all([1 if board[i][i] == "O" else 0 for i in range(3)]) or all([1 if board[i-1][3-i] == "O" else 0 for i in range(1, 4)]):
         print("The computer wins!")
         return 0
-    elif all([1 if board[i][j] != "·" else 0 for j in range(3) for i in range(3) ]):
+    elif all([1 if board[i][j] != "·" else 0 for j in range(3) for i in range(3)]):
         print("Tie")
         return 0
     else:
@@ -60,10 +59,11 @@ def main():
     pritnBoard()
     while playing:
         userTurn()
-        playing=cheekWin()
-        if not playing:break
+        playing = cheekWin()
+        if not playing:
+            break
         machineTurn()
-        playing=cheekWin()
+        playing = cheekWin()
 
 
 if __name__ == "__main__":
