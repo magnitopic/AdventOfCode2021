@@ -1,40 +1,79 @@
 from tkinter import *
-from tkinter import messagebox
 from PIL import Image, ImageTk
+import random
+import time
 
+# Tkinter settings
 root = Tk()
 root.geometry('620x620')
 root.title("TicTacToe")
 
-x = ImageTk.PhotoImage(Image.open('images/x.png').resize((200, 200)))
-o = ImageTk.PhotoImage(Image.open('images/o.png').resize((200, 200)))
+imageX = ImageTk.PhotoImage(Image.open('images/x.png').resize((200, 200)))
+imageO = ImageTk.PhotoImage(Image.open('images/o.png').resize((200, 200)))
 
-board = []
+# Logic code
+
+# Add the buttons to the board array
+board = [[Button(root, padx=95, pady=95, command=lambda: userInput(i,j)) for i in range(3)]for j in range(3)]
+# Show the buttons with grid
+[[board[i][j].grid(row=i, column=j) for i in range(3)]for j in range(3)]
+
+def changeUI(x,y,symbol):
+    button=board[x][y]
+    if symbol=="x":
+        button.config(image=imageX)
+    elif symbol=="y":
+        button.config(image=imageO)
+
+def userInput(x,y):
+    if userTurn:
+        changeUI(x,y,"x")
+
+
+def machineTurn():
+    time.sleep(random.randint(1, 3))
+    while True:
+        x, y = random.randint(0, 2), random.randint(0, 2)
+        if board[x][y] == "·":
+            changeUI(x,y,"o")
+            break
+
+
+def cheekWin():
+    # Checks if the user won
+    if any([1 for j in range(3) if sum([1 for i in range(3) if board[j][i] == "X"]) == 3]) or any([1 for j in range(3) if sum([1 for i in range(3) if board[i][j] == "X"]) == 3]) or all([1 if board[i][i] == "X" else 0 for i in range(3)]) or all([1 if board[i-1][3-i] == "X" else 0 for i in range(1, 4)]):
+        print("You Win!")
+        return 0
+    # Checks if the PC has won
+    elif any([1 for j in range(3) if sum([1 for i in range(3) if board[j][i] == "O"]) == 3]) or any([1 for j in range(3) if sum([1 for i in range(3) if board[i][j] == ""]) == 3]) or all([1 if board[i][i] == "O" else 0 for i in range(3)]) or all([1 if board[i-1][3-i] == "O" else 0 for i in range(1, 4)]):
+        print("The computer wins!")
+        return 0
+    # Checks for a tie
+    elif all([1 if board[i][j] != "·" else 0 for j in range(3) for i in range(3)]):
+        print("Tie")
+        return 0
+    # Else, we keep playing
+    else:
+        return 1
+
+
+def main():
+    userTurn=True
+    print("board:",board)
+    root.mainloop()
+    
+
+    """ playing = 1
+    while playing:
+        userTurn()
+        playing = cheekWin()
+        if not playing:
+            break
+        machineTurn()
+        playing = cheekWin() """
 
 
 
-def X(button):
-    button.config(image=x)
 
-
-padx, pady = 95, 95
-cerocero = Button(root, padx=padx, pady=pady, command=lambda: X(cerocero))
-cerocero.grid(row=0, column=0)
-onecero = Button(root, padx=padx, pady=pady, command=lambda: X(onecero))
-onecero.grid(row=1, column=0)
-twocero = Button(root, padx=padx, pady=pady, command=lambda: X(twocero))
-twocero.grid(row=2, column=0)
-ceroone = Button(root, padx=padx, pady=pady, command=lambda: X(ceroone))
-ceroone.grid(row=0, column=1)
-oneone = Button(root, padx=padx, pady=pady, command=lambda: X(oneone))
-oneone.grid(row=1, column=1)
-twoone = Button(root, padx=padx, pady=pady, command=lambda: X(twoone))
-twoone.grid(row=2, column=1)
-cerotwo = Button(root, padx=padx, pady=pady, command=lambda: X(cerotwo))
-cerotwo.grid(row=0, column=2)
-oneTwo = Button(root, padx=padx, pady=pady, command=lambda: X(oneTwo))
-oneTwo.grid(row=1, column=2)
-twoTwo = Button(root, padx=padx, pady=pady, command=lambda: X(twoTwo))
-twoTwo.grid(row=2, column=2)
-
-root.mainloop()
+if __name__ == "__main__":
+    main()

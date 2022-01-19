@@ -1,10 +1,9 @@
-import random
-import time
+import random, time
 
 board = [["·" for i in range(3)]for j in range(3)]
 
 
-def pritnBoard():
+def printBoard():
     print(f" {board[0][0]} | {board[0][1]} | {board[0][2]} \n---+---+---\n {board[1][0]} | {board[1][1]} | {board[1][2]} \n---+---+---\n {board[2][0]} | {board[2][1]} | {board[2][2]} ")
     print("-"*10)
 
@@ -23,7 +22,7 @@ def userTurn():
                 raise ValueError('ERROR')
         except:
             print("Input is not valid. Try again.")
-    pritnBoard()
+    printBoard()
 
 # Missing: Algorithem that chooses dinamiclly
 def machineTurn():
@@ -35,7 +34,7 @@ def machineTurn():
         if board[x][y] == "·":
             board[x][y] = "O"
             break
-    pritnBoard()
+    printBoard()
 
 
 def cheekWin():
@@ -47,16 +46,18 @@ def cheekWin():
     elif any([1 for j in range(3) if sum([1 for i in range(3) if board[j][i] == "O"]) == 3]) or any([1 for j in range(3) if sum([1 for i in range(3) if board[i][j] == ""]) == 3]) or all([1 if board[i][i] == "O" else 0 for i in range(3)]) or all([1 if board[i-1][3-i] == "O" else 0 for i in range(1, 4)]):
         print("The computer wins!")
         return 0
+    # Checks for a tie
     elif all([1 if board[i][j] != "·" else 0 for j in range(3) for i in range(3)]):
         print("Tie")
         return 0
+    # Else, we keep playing
     else:
         return 1
 
 
 def main():
     playing = 1
-    pritnBoard()
+    printBoard()
     while playing:
         userTurn()
         playing = cheekWin()
