@@ -3,31 +3,36 @@ from PIL import Image, ImageTk
 import random
 import time
 
+# Note: Not finished
+
 # Tkinter settings
 root = Tk()
-root.geometry('620x620')
+root.geometry('600x640')
 root.title("TicTacToe")
 
 imageX = ImageTk.PhotoImage(Image.open('images/x.png').resize((200, 200)))
 imageO = ImageTk.PhotoImage(Image.open('images/o.png').resize((200, 200)))
 
 # Logic code
-
+userTurn = True
 # Add the buttons to the board array
-board = [[Button(root, padx=95, pady=95, command=lambda: userInput(i,j)) for i in range(3)]for j in range(3)]
+board = [[Button(root, padx=95, pady=95, command=lambda: userInput(i, j))
+          for i in range(3)]for j in range(3)]
 # Show the buttons with grid
 [[board[i][j].grid(row=i, column=j) for i in range(3)]for j in range(3)]
 
-def changeUI(x,y,symbol):
-    button=board[x][y]
-    if symbol=="x":
+
+def changeUI(x, y, symbol):
+    button = board[x][y]
+    if symbol == "x":
         button.config(image=imageX)
-    elif symbol=="y":
+    elif symbol == "y":
         button.config(image=imageO)
 
-def userInput(x,y):
+
+def userInput(x, y):
     if userTurn:
-        changeUI(x,y,"x")
+        changeUI(x, y, "x")
 
 
 def machineTurn():
@@ -35,7 +40,7 @@ def machineTurn():
     while True:
         x, y = random.randint(0, 2), random.randint(0, 2)
         if board[x][y] == "·":
-            changeUI(x,y,"o")
+            changeUI(x, y, "o")
             break
 
 
@@ -58,10 +63,8 @@ def cheekWin():
 
 
 def main():
-    userTurn=True
-    print("board:",board)
+    print("board:", board)
     root.mainloop()
-    
 
     """ playing = 1
     while playing:
@@ -71,8 +74,6 @@ def main():
             break
         machineTurn()
         playing = cheekWin() """
-
-
 
 
 if __name__ == "__main__":
