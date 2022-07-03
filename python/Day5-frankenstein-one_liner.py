@@ -1,1 +1,0 @@
-print(*[f"{j} => {n}\n" for j in [chr(i) for i in range(32,123)] if (n := len([i for i in open("Frankenstein.txt", "r", encoding="utf-8").read() if i==j]))!=0])

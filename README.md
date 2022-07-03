@@ -81,3 +81,41 @@ Challenges can be solved using whatever programming language you wish.
 -   1st row -> 1
 -   2st row -> 3 + 5 = 8
 -   3st row -> 7 + 9 + 11 = 27
+
+## Day5
+
+### Distribute text into diferent rows
+
+-   Create a function that receives two arguments:
+    -   A string that is not empty
+    -   An integer between 1 and the length of the string
+-   The function must print the string with only the intiger number of characters per row
+
+**Example**
+
+-   Inputs:
+    -   "ABCDEFG @HIJKLIMNOQRSTUVWXYZ"
+    -   6
+-   Output:
+
+    `ABCDEF`  
+    `G @HIJ`  
+    `KLIMNO`  
+    `QRSTUV`  
+    `WXYZ`
+
+## Day6
+
+### Stepped Array
+
+-   Given the parameter number of rows (n) create an array:
+    -   The number of rows (n) can vary between 1 and 20
+    -   The number of columns is always three times the number of rows.
+    -   The matrix is composed of zeros and ones according to the distribution shown in the image, depending on the value of the parameter n.
+-   It is about printing the matrix in the terminal based on the value of n that they give us.
+
+![matriz.png](https://drive.google.com/uc?id=1yff9bW_yu-U1aTdbR2mTmWkD31ZPrqnc)
+
+-   If n = 5 you would get the following result:
+
+![matriz.png](https://drive.google.com/uc?id=1Pz5wbwCls6DAwOh2SI0Nes-011nSLTjC)
