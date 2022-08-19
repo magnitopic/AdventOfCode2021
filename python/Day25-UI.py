@@ -10,8 +10,8 @@ root = Tk()
 root.geometry('600x640')
 root.title("TicTacToe")
 
-imageX = ImageTk.PhotoImage(Image.open('images/x.png').resize((200, 200)))
-imageO = ImageTk.PhotoImage(Image.open('images/o.png').resize((200, 200)))
+imageX = ImageTk.PhotoImage(Image.open('.images/x.png').resize((200, 200)))
+imageO = ImageTk.PhotoImage(Image.open('.images/o.png').resize((200, 200)))
 
 # Logic code
 userTurn = True
