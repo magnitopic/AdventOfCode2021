@@ -7,7 +7,10 @@ import time
 
 # Tkinter settings
 root = Tk()
-root.geometry('600x640')
+w = int(root.winfo_screenwidth()/3.5)
+h = int(root.winfo_screenheight()/3)
+root.geometry(f"{w}x{h}")
+root.resizable(False, False)
 root.title("TicTacToe")
 
 imageX = ImageTk.PhotoImage(Image.open('.images/x.png').resize((200, 200)))
@@ -15,11 +18,10 @@ imageO = ImageTk.PhotoImage(Image.open('.images/o.png').resize((200, 200)))
 
 # Logic code
 userTurn = True
-# Add the buttons to the board array
-board = [[Button(root, padx=95, pady=95, command=lambda: userInput(i, j))
-          for i in range(3)]for j in range(3)]
-# Show the buttons with grid
-[[board[i][j].grid(row=i, column=j) for i in range(3)]for j in range(3)]
+# Add the buttons to the screen
+board = [[Button(root, padx=95, pady=95, text='Quit') for i in range(3)] for j in range(3)]
+#.place(x=w*(39*i)/100, y=h*(30*j)/100)
+[[board[i][j].place(x=w*(39*i)/100, y=h*(30*j)/100) for i in range(3)] for j in range(3)]
 
 
 def changeUI(x, y, symbol):
