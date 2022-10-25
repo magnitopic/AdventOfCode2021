@@ -8,9 +8,9 @@ Challenges can be solved using whatever programming language you wish.
 
 # Challenges
 
-## Day1
+## Day 1
 
-### Divisors of a series of numbers
+## Divisors of a series of numbers
 
 -   The user specifies the range of numbers, indicating the start and end of the series
 -   Calculate the divisors of all the numbers in that series
@@ -32,18 +32,18 @@ Challenges can be solved using whatever programming language you wish.
     -   109 -> [1,109]
     -   110 -> [1,2,5,10,11,22,55,110]
 
-## Day2
+## Day 2
 
-### Character frequency in a book
+## Character frequency in a book
 
 -   Analyze the frequency of all the characters in a book
     -   I'll be using: Frankenstein; Or, The Modern Prometheus by Mary Wollstonecraft Shelley
     -   It can be obtained freely from [proyect Guttember](https://www.gutenberg.org/ebooks/84).
     -   Or [from this repository](https://raw.githubusercontent.com/magnitopic/AdventOfCode2021/master/Frankenstein.txt) in txt format
 
-## Day3
+## Day 3
 
-### Find the different number
+## Find the different number
 
 -   Generate an array of integers with a random length between 3 and 15
 -   The integers of the array are random between -99 and +99
@@ -61,7 +61,7 @@ Challenges can be solved using whatever programming language you wish.
 
 ## Day 4
 
-### Sum of odd numbers in a triangle
+## Sum of odd numbers in a triangle
 
 -   Using a triangle of odd number like this one:
 
@@ -82,9 +82,9 @@ Challenges can be solved using whatever programming language you wish.
 -   2st row -> 3 + 5 = 8
 -   3st row -> 7 + 9 + 11 = 27
 
-## Day5
+## Day 5
 
-### Distribute text into diferent rows
+## Distribute text into diferent rows
 
 -   Create a function that receives two arguments:
     -   A string that is not empty
@@ -104,9 +104,9 @@ Challenges can be solved using whatever programming language you wish.
     `QRSTUV`  
     `WXYZ`
 
-## Day6
+## Day 6
 
-### Stepped Array
+## Stepped Array
 
 -   Given the parameter number of rows (n) create an array:
     -   The number of rows (n) can vary between 1 and 20
@@ -119,3 +119,32 @@ Challenges can be solved using whatever programming language you wish.
 -   If n = 5 you would get the following result:
 
 ![matriz.png](https://drive.google.com/uc?id=1Pz5wbwCls6DAwOh2SI0Nes-011nSLTjC)
+
+## Day 8
+
+## List Comprehension
+
+-   We are given three integer numbers(_x_, _y_ and _z_) witch represent 3D coordinates and another integer number (_n_).
+
+-   You must print a list of all the posible
+
+## Day 9
+
+## Making matrices
+
+-   Generate a square matix of _n_ rows and _n_ colums. Dimensions _n×n_
+
+-   The value of _n_ can be between 1 and 100
+
+-   The elements of the matrix are random integer numbers between 9 and -9
+
+-   The random numbers must folow this probability distribution: [25,20,16,12,9,7,5,3,2,1]
+
+    -   25 indicates the probability of getting a 0 is 25%
+    -   20 indicates the probability of getting a 1 or -1 is 20%
+    -   ../..
+    -   1 indicates the probability of gerring a 9 or -9 is 1%
+
+-   No row or colum can exist in which all elements are a zero
+
+-   Given _n_ show the matrix on screen
