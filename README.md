@@ -130,7 +130,7 @@ Challenges can be solved using whatever programming language you wish.
 
 ## Day 9
 
-## Making matrices
+## Making square matrices
 
 -   Generate a square matix of _n_ rows and _n_ colums. Dimensions _n×n_
 
