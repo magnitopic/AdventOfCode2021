@@ -78,9 +78,10 @@ Challenges can be solved using whatever programming language you wish.
 
 **Example**
 
--   1st row -> 1
--   2st row -> 3 + 5 = 8
--   3st row -> 7 + 9 + 11 = 27
+-   The user asks for 3 rows:
+    -   1st row -> 1
+    -   2st row -> 3 + 5 = 8
+    -   3st row -> 7 + 9 + 11 = 27
 
 ## Day 5
 
